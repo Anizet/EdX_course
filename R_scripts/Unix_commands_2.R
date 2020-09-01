@@ -12,4 +12,5 @@ git remote set-url origin "https://github.com/Anizet/EdX_course.git"
 # Once you have the connection you can
 git add
 git commit -m ""
-git push # to add all the files commited to the local repo
+git branch -M master
+git push -u origin master # to add all the files committed to the local repo

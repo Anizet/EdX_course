@@ -123,6 +123,8 @@ which # gives us a directory of the variable $PATH
 # To open a file
 start filenameandpath
 
+
+
 # to clone a repository
 git clone https://github.com/Anizet/homework-o.git
 
