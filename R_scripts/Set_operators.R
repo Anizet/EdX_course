@@ -8,3 +8,8 @@ setdiff() # not symmetric! returns the set differences
 
 setequal() # returns if the two vectors are equal, regardless of order
 
+#. the same dplyr function can be used for tables with the same column names
+dplyr::union(...)
+dplyr::intersect(...)
+dplyr::setequal(...)
+#etc.

@@ -21,8 +21,10 @@ library(readr)
 #function to separate a column into multiple ones in order to tidy the data
 separate(key, c('year', 'variable_name'), sep ='_', extra = "merge")
 #1 st argument : name of the column to separate
-#2st argument : names for the new columns
-#3st : character that separates the variables
+#2 nd argument : names for the new columns
+#3 rd : character that separates the variables
+#if there is more then 1 separator, use the argument extra = "merge"
+
 spread(variable_name, value)
 
 #inverse of sepa+rate 
