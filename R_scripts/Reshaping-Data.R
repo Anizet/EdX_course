@@ -17,6 +17,7 @@ spread()
 # 2nd argument : which variable will fill out the cells
 
 library(tidyverse)
+library(readr)
 #function to separate a column into multiple ones in order to tidy the data
 separate(key, c('year', 'variable_name'), sep ='_', extra = "merge")
 #1 st argument : name of the column to separate
