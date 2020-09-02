@@ -7,7 +7,8 @@ gather()
 # example
 new_tidy_data <- wide_data %>% +
   gather(year, fertility, '1960':'2015')
-# the convert argument allows to convert string into numeric data
+# to gather all but the specified columns in the 3rd argument, use the -specified-rows argument
+# the convert = TRUE argument allows to convert string into numeric data
 
 #inverse of gather() is spread()
 
@@ -23,5 +24,5 @@ separate(key, c('year', 'variable_name'), sep ='_', extra = "merge")
 #3st : character that separates the variables
 spread(variable_name, value)
 
-#inverse of seperate 
+#inverse of sepa+rate 
 unite()
