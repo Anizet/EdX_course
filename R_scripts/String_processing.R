@@ -14,7 +14,7 @@ library(stringr)
 str_detect(x, ",") # To see if the strings have any commas
 str_replace_all(x, ",", "") # To replace the commas with nothing
 
-#or you can just use this function
+#or you can just use this function to remove non-numeric characters from numbers
 parse_number(x)
 
 # To mutate a data frame by variable
