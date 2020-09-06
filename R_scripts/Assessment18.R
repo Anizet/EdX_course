@@ -69,5 +69,21 @@ bat_02 <- Batting %>% filter(yearID == 2002) %>%
 
 bat_9901 <- Batting %>% filter(yearID %in% 1999:2001) %>%
   mutate(pa = AB + BB, singles = (H - X2B - X3B - HR)/pa, bb = BB/pa) %>%
-  filter(pa >= 100) %>%
-  select(playerID, singles, bb)
+  filter(pa >= 100) %>% group_by(playerID) %>% summarize(mean_singles = mean(singles), mean_bb = mean(bb))
+sum(bat_9901$mean_bb > 0.2)
+
+
+bat_join <- inner_join(bat_9901, bat_02)
+cor(bat_join$mean_singles, bat_join$singles)
+
+cor(bat_join$mean_bb, bat_join$bb)
+
+bat_join %>% ggplot(aes(mean_singles, singles)) + geom_point()
+bat_join %>% ggplot(aes(mean_bb, bb)) + geom_point()
+
+fit_1 <- lm(singles ~ mean_singles, data = bat_join)
+fit_1
+summary(fit_1)
+
+fit_2 <- lm(bb ~ mean_bb, data = bat_join)
+fit_2
