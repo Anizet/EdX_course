@@ -1,3 +1,5 @@
+library(tidyverse)
+
 Master1q1 <- tibble(Cours = c('Analyse Biochimique', "Projet bibli", "Société culture et religion", "Spectroscopie", "Chimie physique", "Projet d'analyse chimique","Chimie des solides"), Crédits = c(4,5,2,5,5,10,4), quadri = "q1")
 
 M1q1res <- Master1q1 %>% summarize(nombre_de_cours = n(), Crédits = sum(Crédits))
