@@ -53,5 +53,5 @@ get_course("https://uclouvain.be/cours-2020-LCHM2261A")
 
 a <- c("https://uclouvain.be/cours-2020-LCHM2231", "https://uclouvain.be/cours-2020-LMAPR2013", "https://uclouvain.be/cours-2020-LMAPR2016", "https://uclouvain.be/cours-2020-LMAPR2018", "https://uclouvain.be/cours-2020-LMAPR2019", "https://uclouvain.be/cours-2020-LBRMC2201", "https://uclouvain.be/cours-2020-LCHM2261A")
 
-b <- sapply(a, get_course)
+b <- sapply(a, get_course, USE.NAMES = FALSE)
 b
