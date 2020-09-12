@@ -1,5 +1,9 @@
 library(tidyverse)
 
+q1tps_bac3 <- 297.5
+q2tps_bac3 <- 290
+q1tps_m1 <- 364.5
+q2tps_m1 <- 300
 Master1q1 <- tibble(Cours = c('Analyse Biochimique', "Projet bibli", "Société culture et religion", "Spectroscopie", "Chimie physique", "Projet d'analyse chimique","Chimie des solides"), Crédits = c(4,5,2,5,5,10,4), quadri = "q1")
 
 M1q1res <- Master1q1 %>% summarize(nombre_de_cours = n(), Crédits = sum(Crédits))
