@@ -18,3 +18,4 @@ galton %>% group_by(pair) %>% summarize(cor(parentHeight,childHeight))
 
 library(broom)
 galton %>% group_by(pair) %>% do(tidy(lm(childHeight ~ parentHeight, data = .), conf.int = TRUE))
+

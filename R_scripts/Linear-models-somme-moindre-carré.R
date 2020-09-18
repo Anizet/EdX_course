@@ -1,5 +1,6 @@
 #example
 #compute RSS for any pair of beta0 and beta1 in Galton's data
+library(tidyverse)
 library(HistData)
 data("GaltonFamilies")
 set.seed(1983)

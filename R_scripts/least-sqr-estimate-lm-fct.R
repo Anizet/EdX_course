@@ -8,6 +8,10 @@ summary(fit) # extracts more information from the model we just made, its the co
 # fuck yeah !!
 # remember the p values for b0 and b1 etc. test the null hypothesis that the b0=0 and b1=0 (so the null hypothesis that these parameters have very little effect)
 
+library(broom)
+tidy(fit, conf.int = TRUE)
+
+
 #!!!!!!! plot predictions and confidence intervals
 galton_heights %>% ggplot(aes(son, father)) +
   geom_point() +
@@ -17,7 +21,7 @@ galton_heights %>% ggplot(aes(son, father)) +
 fit <- galton_heights %>% lm(son ~ father, data = .) 
 Y_hat <- predict(fit, se.fit = TRUE)
 names(Y_hat)
-
+Y_hat
 # plot best fit line
 galton_heights %>%
   mutate(Y_hat = predict(lm(son ~ father, data=.))) %>%
@@ -48,6 +52,6 @@ grid.arrange(p1, p2, ncol = 2)
 # summary statistics
 sample_n(galton_heights, N, replace = TRUE) %>% 
   lm(son ~ father, data = .) %>% 
-  summary %>%
+  summary() %>%
   .$coef
 
